@@ -11,7 +11,7 @@ namespace RazorPages.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-
+        public string Message { get; set; }
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -19,7 +19,7 @@ namespace RazorPages.Pages
 
         public void OnGet()
         {
-
+            Message = $"Welcom to my first Razor Pages Application\nTime now is:{DateTime.Now.ToLongTimeString()}";
         }
     }
 }
