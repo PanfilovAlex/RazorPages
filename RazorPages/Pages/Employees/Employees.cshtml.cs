@@ -9,8 +9,10 @@ namespace RazorPages.Pages.Employees
 {
     public class EmployeesModel : PageModel
     {
+
         public void OnGet()
         {
+
         }
     }
 }
