@@ -1,0 +1,41 @@
+﻿@page "{id}"
+@model RazorPages.Pages.Employees.DetailsModel
+@{
+    ViewData["Title"] = "Employee's Deatil";
+    var photoPath = $"/images/{Model.Employees.PhotoPath ?? "noimage.png"}";
+}
+
+<div class="row justify-content-center m-3 ">
+    <div class="col col-lg8">
+        <div class="card cardBoxShadow">
+
+            <div class="card-header cardHeaderStyle">
+                <h1><span class="font-weight-bold">@Model.Employees.Name </span></h1>
+            </div>
+
+            <div class="card-body cardBodyStyle">
+                <div class="row">
+                    <div class="col col-lg-9">
+                        <h4 class="text-left text-uppercase">Employee ID: @Model.Employees.Id </h4><hr />
+                        <h4 class="text-left text-uppercase">Employee Email: @Model.Employees.Email </h4><hr />
+                        <h4 class="text-left text-uppercase">Employee Department: <span class="text-danger font-weight-bolder"> @Model.Employees.Department </span> </h4><hr />
+                    </div>
+                    <div class="col col-lg-3">
+                        <div style="border-right: 1px solid rgba(0,0,0,.2);">
+                            <img class="card-img-top imageThumbnail border border-primary" src="@photoPath" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card-footer text-center">
+                        <a asp-page="Employees" class="btn btn-success buttonShadow">Back</a>
+                        <a asp-page="Edit" class="btn btn-primary buttonShadow">Edit</a>
+                        <a href="#" class="btn btn-danger buttonShadow">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
